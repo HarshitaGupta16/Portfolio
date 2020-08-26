@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Home Page {% endblock %}
+
+{% block content %}
+
+
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <!--<h1>Create you own Profiler</h1>-->
+
+            <div style="text-align:left;">
+                <h2>A proper place to keep all your projects, documents at one place</h2>
+
+                <p>Design your own porfolio. Describe yourself, add your projects, groom yourself.</p>
+            </div>
+
+            {% if session['username'] %}
+                <h3>Let's get started.</h3>
+            {% else %}
+                <p>Already registered? <a href="{{ url_for('home') }}">Login</a></p>
+            {% endif %}
+
+        </div>
+    </div>
+
+{% endblock %}
